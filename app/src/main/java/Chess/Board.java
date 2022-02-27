@@ -8,18 +8,11 @@ public class Board {
 
     public  Board() {
         this.board = new Piece[8][8];
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 8; j++) {
-                this.board[i][j] = new Pawn();
-            }
+        
+        for (int j = 0; j < 8; j++) {
+            this.board[1][j] = new Pawn();
+            this.board[6][j] = new Pawn();
         }
-        for (int i = 6; i < 8; i++) {
-            for (int j = 0; j < this.board[0].length; j++) {
-                this.board[i][j] = new Pawn();
-            }
-            
-        }
-
     }
 
     public Piece[][] getBoard(){
@@ -32,8 +25,14 @@ public class Board {
 
     public void movePiece(int fromRow, int fromColumn, int toRow, int toColumn){
         Piece pieceToMove = getPieceAt(fromRow, fromColumn); 
-        this.board[fromRow][fromColumn] = null;
-        this.board[toRow][toColumn] = pieceToMove;
+        if(checkLegalMove(pieceToMove,fromRow,fromColumn,toRow,toColumn)){
+            this.board[fromRow][fromColumn] = null;
+            this.board[toRow][toColumn] = pieceToMove;
+        }
+    }
+
+    public boolean checkLegalMove(Piece pieceToCheck,int fromRow,int fromColumn, int toRow, int toColumn){
+        return pieceToCheck.canMoveToSquare(fromRow,fromColumn,toRow,toColumn);
     }
 
 

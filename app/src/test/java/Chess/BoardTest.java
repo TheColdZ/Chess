@@ -13,14 +13,14 @@ class BoardTest {
     
     @Test void getPieceAtTest(){
         Board board = new Board();
-        assertTrue(board.getPieceAt(0,0) instanceof Piece);
+        assertTrue(board.getPieceAt(1,1) instanceof Piece);
     }
 
     
 
-    @Test void PieceAt0_4(){
+    @Test void PieceAt1_4(){
         Board board = new Board();
-        assertNotNull(board.getPieceAt(0,4));
+        assertNotNull(board.getPieceAt(1,4));
     }
 
     @Test void noPieceAt4_0(){
@@ -28,9 +28,10 @@ class BoardTest {
         assertNull(board.getPieceAt(4, 0));
     }
 
-    @Test void PieceAt7_7(){
+
+    @Test void PieceAt6_6(){
         Board board = new Board();
-        assertNotNull(board.getPieceAt(7, 7));
+        assertNotNull(board.getPieceAt(6, 6));
     }
 
     @Test void movePawn(){
@@ -41,7 +42,7 @@ class BoardTest {
         assertNull(board.getPieceAt(1, 0));
     }
 
-    @Test void illegalMoveOfPawn(){
+    @Test void illegalMoveOfPawn1_0To2_1(){
         Board board = new Board();
         assertNotNull(board.getPieceAt(1, 0));
         board.movePiece(1,0,2,1);

@@ -13,4 +13,6 @@ public class PawnTest {
         Pawn pawn = new Pawn();
         assertEquals(0, pawn.getMovement());
     }
+
+    
 }

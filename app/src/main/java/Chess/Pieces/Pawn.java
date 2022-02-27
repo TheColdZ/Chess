@@ -18,4 +18,8 @@ public class Pawn implements Piece {
     public int getMovement() {
         return 0;
     }
+
+    public boolean canMoveToSquare(int fromRow,int fromColumn, int toRow, int toColumn){
+        return (fromColumn == toColumn) && (fromRow + 1 == toRow);
+    }
 }
