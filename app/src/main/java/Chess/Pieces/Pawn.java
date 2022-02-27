@@ -1,8 +1,8 @@
 package Chess.Pieces;
 
-import Chess.PieceInterface;
+import Chess.Piece;
 
-public class Pawn implements PieceInterface {
+public class Pawn implements Piece {
     private final String name;
     
 
@@ -14,7 +14,7 @@ public class Pawn implements PieceInterface {
     public String getName() {
         return name;
     }
-    
+
     public int getMovement() {
         return 0;
     }

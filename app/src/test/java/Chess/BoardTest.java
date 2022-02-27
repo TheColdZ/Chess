@@ -13,9 +13,30 @@ class BoardTest {
     
     @Test void getPieceAtTest(){
         Board board = new Board();
-        assertTrue(board.getPieceAt(0,0) instanceof PieceInterface);
+        assertTrue(board.getPieceAt(0,0) instanceof Piece);
     }
 
     
+
+    @Test void PieceAt0_4(){
+        Board board = new Board();
+        assertNotNull(board.getPieceAt(0,4));
+    }
+
+    @Test void noPieceAt4_0(){
+        Board board = new Board();
+        assertNull(board.getPieceAt(4, 0));
+    }
+
+    @Test void PieceAt7_7(){
+        Board board = new Board();
+        assertNotNull(board.getPieceAt(7, 7));
+    }
+
+
+    
+
+
+
 
 }
