@@ -4,22 +4,26 @@ import Chess.Piece;
 
 public class Pawn implements Piece {
     private final String name;
+    private final boolean colour; //true = white, false = black
     
 
-    public Pawn(){
+    public Pawn(boolean colour){
         this.name = "Pawn";
-
+        this.colour = colour; 
     }
 
     public String getName() {
         return name;
     }
 
-    public int getMovement() {
-        return 0;
+    public boolean canMoveToSquare(int fromRow,int fromColumn, int toRow, int toColumn){
+        if (this.colour) {
+            return (fromColumn == toColumn) && (fromRow - 1 == toRow);
+        }
+        return (fromColumn == toColumn) && (fromRow + 1 == toRow);
     }
 
-    public boolean canMoveToSquare(int fromRow,int fromColumn, int toRow, int toColumn){
-        return (fromColumn == toColumn) && (fromRow + 1 == toRow);
+    public boolean getColour(){
+        return colour;
     }
 }

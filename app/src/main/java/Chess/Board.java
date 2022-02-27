@@ -10,8 +10,8 @@ public class Board {
         this.board = new Piece[8][8];
         
         for (int j = 0; j < 8; j++) {
-            this.board[1][j] = new Pawn();
-            this.board[6][j] = new Pawn();
+            this.board[1][j] = new Pawn(false);
+            this.board[6][j] = new Pawn(true);
         }
     }
 

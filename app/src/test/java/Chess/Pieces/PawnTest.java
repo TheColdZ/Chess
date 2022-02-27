@@ -5,14 +5,31 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PawnTest {
 
     @Test void getNameTest(){
-        Pawn pawn = new Pawn();
+        Pawn pawn = new Pawn(true);
         assertEquals("Pawn", pawn.getName());
     }
 
-    @Test void getMovement(){
-        Pawn pawn = new Pawn();
-        assertEquals(0, pawn.getMovement());
+    @Test void pawnCanMove(){
+        Pawn pawn = new Pawn(false);
+        assertTrue(pawn.canMoveToSquare(1,0,2,0));
+    } 
+
+    @Test void getColour(){
+        Pawn pawn = new Pawn(true);
+        assertTrue(pawn.getColour());
+    }
+
+    @Test void blackPawnMovesDown(){
+        Pawn pawn = new Pawn(false);
+        assertTrue(pawn.canMoveToSquare(1, 0, 2, 0));
     }
 
     
+    @Test void whitePawnMovesUp(){
+        Pawn pawn = new Pawn(true);
+        assertTrue(pawn.canMoveToSquare(6, 0, 5, 0));
+    }
+
+
+
 }
