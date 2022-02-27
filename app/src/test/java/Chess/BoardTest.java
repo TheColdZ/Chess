@@ -33,6 +33,22 @@ class BoardTest {
         assertNotNull(board.getPieceAt(7, 7));
     }
 
+    @Test void movePawn(){
+        Board board = new Board();
+        assertNotNull(board.getPieceAt(1, 0));
+        board.movePiece(1,0,2,0);
+        assertNotNull(board.getPieceAt(2, 0));
+        assertNull(board.getPieceAt(1, 0));
+    }
+
+    @Test void illegalMoveOfPawn(){
+        Board board = new Board();
+        assertNotNull(board.getPieceAt(1, 0));
+        board.movePiece(1,0,2,1);
+        assertNull(board.getPieceAt(2, 1));
+        assertNotNull(board.getPieceAt(1, 0));
+    }
+
 
     
 

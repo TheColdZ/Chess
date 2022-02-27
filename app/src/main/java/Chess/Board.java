@@ -30,4 +30,11 @@ public class Board {
         return this.board[row][column];
     }
 
+    public void movePiece(int fromRow, int fromColumn, int toRow, int toColumn){
+        Piece pieceToMove = getPieceAt(fromRow, fromColumn); 
+        this.board[fromRow][fromColumn] = null;
+        this.board[toRow][toColumn] = pieceToMove;
+    }
+
+
 }
