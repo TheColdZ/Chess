@@ -18,4 +18,6 @@ public class RookTest {
         Rook rook = new Rook(true);
         assertFalse(rook.canMoveToSquare(7, 0, 6, 1));
     }
+
+    
 }

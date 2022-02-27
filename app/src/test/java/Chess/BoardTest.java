@@ -1,6 +1,7 @@
 package Chess;
 
 import org.junit.jupiter.api.Test;
+import Chess.Pieces.Rook;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -62,6 +63,22 @@ class BoardTest {
         board.movePiece(6, 0, 5, 0);
         board.movePiece(5, 0, 3, 0);
         assertNull(board.getPieceAt(3, 0));
+    }
+
+    @Test void getRookAtCorners(){
+        Board board = new Board();
+        Rook rook = new Rook(true);
+        assertTrue(board.getPieceAt(0,0).getClass() == rook.getClass() );
+        assertTrue(board.getPieceAt(0,7).getClass() == rook.getClass() );
+        assertTrue(board.getPieceAt(7,0).getClass() == rook.getClass() );
+        assertTrue(board.getPieceAt(7,7).getClass() == rook.getClass() );
+    }
+
+    @Test void rookCannotMoveOntoAPiece(){
+        Board board = new Board();
+        Rook rook = (Rook) board.getPieceAt(7,0);
+        assertFalse(board.checkLegalMove(rook, 7,0, 5, 0));
+
     }
 
     

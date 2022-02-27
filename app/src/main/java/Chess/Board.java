@@ -1,6 +1,6 @@
 package Chess;
 
-import Chess.Pieces.Pawn;
+import Chess.Pieces.*;
 
 public class Board {
 
@@ -13,6 +13,12 @@ public class Board {
             this.board[1][j] = new Pawn(false);
             this.board[6][j] = new Pawn(true);
         }
+        this.board[0][0] = new Rook(false);
+        this.board[0][7] = new Rook(false);
+
+        this.board[7][0] = new Rook(true);
+        this.board[7][7] = new Rook(true);
+        
     }
 
     public Piece[][] getBoard(){
